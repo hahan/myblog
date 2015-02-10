@@ -1,0 +1,35 @@
+---
+layout: post
+title: Dev Tip of the week - OSX Spotlight search from terminal
+date: 2014-02-23 22:37:00.000000000 -08:00
+categories:
+- OSX
+- software
+- Spotlight
+- Terminal
+- tip
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  blogger_blog: www.hakimhanif.com
+  blogger_author: Hakim Hanif
+  blogger_permalink: "/2014/02/dev-tip-of-week-osx-spotlight-search.html"
+  blogger_internal: "/feeds/2751951855380724535/posts/default/8213724929450073243"
+author:
+  login: hakimhanif
+  email: hakim.hanif@gmail.com
+  display_name: hakimhanif
+  first_name: ''
+  last_name: ''
+---
+<div dir="ltr" style="text-align: left;">This is a really cool tip that I came across that allows you to perform OSX Spotlight search from the Mac Terminal. Add following to your .bashrc or .zshrc on the Mac to do Spotlight-indexed searches from the command line.
+<div></div>
+<div>function spotlight() {</div>
+<div>&nbsp;mdfind "kMDItemDisplayName == '$@'wc";</div>
+<div>}</div>
+<div></div>
+<div><b>Example</b></div>
+<pre style="background-image: URL(http://2.bp.blogspot.com/_z5ltvMQPaa8/SjJXr_U2YBI/AAAAAAAAAAM/46OqEP32CJ8/s320/codebg.gif); background: #f0f0f0; border: 1px dashed #CCCCCC; color: black; font-family: arial; font-size: 12px; height: auto; line-height: 20px; overflow: auto; padding: 0px; text-align: left; width: 99%;"><code style="color: black; word-wrap: normal;"> ~ spotlight main.py  <br /> [/Users/hakim] /Users/hakim/main.py  <br /></code></pre>
+</div>

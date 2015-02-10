@@ -1,0 +1,55 @@
+---
+layout: post
+title: Addition using Bit operations
+date: 2014-03-04 23:48:18.000000000 -08:00
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  blogger_blog: www.hakimhanif.com
+  blogger_author: Hakim Hanif
+  blogger_internal: "/feeds/2751951855380724535/posts/default/6410046383046680957"
+author:
+  login: hakimhanif
+  email: hakim.hanif@gmail.com
+  display_name: hakimhanif
+  first_name: ''
+  last_name: ''
+---
+<p><span style="font-family: arial, sans-serif; font-size: 13px;"></span>
+<div>Lets look at the algorithm first ::</div>
+<div></div>
+<div>Assume we got numbers m and n to add.</div>
+<div>1. m Xor n = X</div>
+<div>2. Now get carry by doing AND: &nbsp;m AND n = C. &nbsp;Shift C to left. C = C &lt;&lt; 1. If C is zero then stop - result is in X else go to step 3.</div>
+<div>3. m =X, n= C. Go to 2.</div>
+<div></div>
+<div></div>
+<div>//Here is the code</div>
+<div>int add(int m, int n)</div>
+<div>{</div>
+<div><span>&nbsp;&nbsp; &nbsp;int result = 0;</span></div>
+<div><span><span>&nbsp;&nbsp; &nbsp;int carry = 0;</span></span></div>
+<div><span><span><span>&nbsp;&nbsp; &nbsp;do</span></span></span></div>
+<div><span><span><span><span>&nbsp;&nbsp; &nbsp;{</span></span></span></span></div>
+<div><span><span><span><span><span>&nbsp;&nbsp; &nbsp;<span>&nbsp;&nbsp; &nbsp;result = m^n;</span></span></span></span></span></span></div>
+<div><span><span><span><span><span><span><span>&nbsp;&nbsp; &nbsp;<span>&nbsp;&nbsp; &nbsp;carry = m&amp;n;</span></span></span></span></span></span></span></span></div>
+<div><span><span><span><span><span><span><span><span><span>&nbsp;&nbsp; &nbsp;<span>&nbsp;&nbsp; &nbsp;carry = carry &lt;&lt; 1;</span></span></span></span></span></span></span></span></span></span></div>
+<div><span><span><span><span><span><span><span><span><span>&nbsp;&nbsp; &nbsp;<span>&nbsp;&nbsp; &nbsp;m = result;</span></span></span></span></span></span></span></span></span></span></div>
+<div><span><span><span><span><span><span><span><span><span><span><span>&nbsp;&nbsp; &nbsp;<span>&nbsp;&nbsp; &nbsp;n = carry;</span></span></span></span></span></span></span></span></span></span></span></span></div>
+<div><span><span><span><span><span>&nbsp;&nbsp; &nbsp;}while(carry!=0);</span></span></span></span></span></div>
+<div><span><span><span><span><span><span>&nbsp;&nbsp; &nbsp;return result;</span></span></span></span></span></span></div>
+<div>}</div>
+<div></div>
+<div></div>
+<div>
+<div>Example -</div>
+<div>m = 100011, n = 011011</div>
+<div>m ^ n = 111000 = X</div>
+<div>m AND n = 000011 = C, &nbsp;C = 000011 &lt;&lt; 1 = 000110</div>
+<div>X ^ C = 111000 ^ 000110 = 111110</div>
+<div>X AND C = 0 - Stop.&nbsp;</div>
+<div>Ans - 111110</div>
+</div>

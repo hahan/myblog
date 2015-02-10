@@ -1,0 +1,34 @@
+---
+layout: post
+title: Arrays and Pointers
+date: 2014-03-04 23:48:18.000000000 -08:00
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  blogger_blog: www.hakimhanif.com
+  blogger_author: Hakim Hanif
+  blogger_internal: "/feeds/2751951855380724535/posts/default/8285998245797328644"
+author:
+  login: hakimhanif
+  email: hakim.hanif@gmail.com
+  display_name: hakimhanif
+  first_name: ''
+  last_name: ''
+---
+<div style="text-align: justify;">Let say, you have:</div>
+<div style="text-align: justify;">char b[] = "abc";</div>
+<div style="text-align: justify;"></div>
+<div style="text-align: justify;">What is the difference when you say -</div>
+<div style="text-align: justify;">char a[] = b;</div>
+<div style="text-align: justify;">char *p = b;</div>
+<div style="text-align: justify;"></div>
+<div><span style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; font-size: 13px; line-height: 19px; " />
+<p style="text-align: justify;">To understand the difference, lets see how the compiler behaves when it sees both the declarations. Whenever a compiler reads a variable, it stores it in its symbol table - its names, address etc along with other details. For simplicity, lets assume it stores: [variable name - its address] only.</p>
+<p style="text-align: justify;">In the above example, lets say value "abc" is stored at address 1000.</p>
+<p style="text-align: justify;">In second case, the compiler will store in its symbol table: a - 1000, where 1000 is address where "abc" is stored. So at runtime, the process will go and fetch the value at address 1000.</p>
+<p style="text-align: justify;">But in first case, the compiler will store: p - 2000 (which is the address of the variable p) in its symbol table. That is, the pointer is assigned a different memory address where it can hold the address (which is of array a).</p>
+<p style="text-align: justify;">Now at runtime, we need to go to memory 2000, fetch value at that address which is 1000 and now again go to 1000 and fetch the value - this time it will of the array element. - Hence indirection.</p>
+</div>
