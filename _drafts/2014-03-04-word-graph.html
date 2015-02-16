@@ -1,0 +1,34 @@
+---
+layout: post
+title: Word Graph
+date: 2014-03-04 23:48:18.000000000 -08:00
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  blogger_blog: www.hakimhanif.com
+  blogger_author: Hakim Hanif
+  blogger_internal: "/feeds/2751951855380724535/posts/default/255374721421738649"
+author:
+  login: hakimhanif
+  email: hakim.hanif@gmail.com
+  display_name: hakimhanif
+  first_name: ''
+  last_name: ''
+---
+<div style="background-color: white; font-family: arial, sans-serif; font-size: 83%; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; overflow-x: hidden; overflow-y: hidden;"><span style="font-family: inherit;"><span style="font-size: medium;">Generating a given word through series of one character changes in another word.</span></span>
+<div><span style="font-family: inherit;"><span style="font-size: medium;">eg. fork-&gt;ford-&gt;word-&gt;work</span></span></div>
+<div><span style="font-family: inherit;"><span style="font-size: medium;"><br /></span></span></div>
+<div><span style="font-family: inherit;"><span style="font-size: medium;">To achieve this, we need to use concept of graphs where each node will represent a word, and the edge will represent one letter change between the 2 words. Lets assume that there is a function called isValidWord(string); which checks whether the word is present in the dictionary.</span></span></div>
+<div><span style="font-family: inherit;"><span style="font-size: medium;"><br /></span></span></div>
+<div><span style="font-family: inherit;"><span style="font-size: medium;">I am giving below my version of the algorithm, please comment if you think it can be improved further.</span></span></div>
+<div><span style="font-family: inherit;"><span style="font-size: medium;">&nbsp;&nbsp; &nbsp;1. First start with given word, create a node for it and add it to a queue.</span></span></div>
+<div><span style="font-family: inherit;"><span style="font-size: medium;">&nbsp;&nbsp; &nbsp;2. While the queue is not empty</span></span></div>
+<div><span style="font-family: inherit;"><span style="font-size: medium;">&nbsp;&nbsp; &nbsp;</span></span><span style="font-family: inherit;"><span style="font-size: medium;">&nbsp;&nbsp; &nbsp;</span></span><span style="font-family: inherit;"><span style="font-size: medium;">&nbsp;&nbsp; 2.a) Remove the node N from the queue;</span></span></div>
+<div><span style="font-family: inherit;"><span style="font-size: medium;">&nbsp;&nbsp; &nbsp;</span></span><span style="font-family: inherit;"><span style="font-size: medium;">&nbsp;&nbsp; &nbsp;</span></span><span style="font-family: inherit;"><span style="font-size: medium;">&nbsp;&nbsp; 2.b) Add all the valid neighbour nodes to that node - i.e. find all the words with one character different from the words and create a node for each such word and &nbsp;</span></span><span style="font-family: inherit;"><span style="font-size: medium;">&nbsp;&nbsp; &nbsp;</span></span><span style="font-family: inherit;"><span style="font-size: medium;">add it as children node for the node N. In this step we need to make sure that if we get a word which turns out to the destination word, then we may not add all other nodes as the children node. And also, while adding a node, we need to make sure that that word is not already present in the graph somewhere else. As if that word is already present somewhere then anyhow we will use it to get to the final word.</span></span></div>
+<div><span style="font-family: inherit;"><span style="font-size: medium;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.c) Now, add all those children nodes to the queue.</span></span></div>
+<div><span style="font-family: inherit;"><span style="font-size: medium;">&nbsp;&nbsp; &nbsp;3. Now once we got the graph, perform a breadth first search to get to the final word - this would be the shortest path.</span></span></div>
+<div></div>
+</div>

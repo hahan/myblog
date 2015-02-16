@@ -1,0 +1,28 @@
+---
+layout: post
+title: Random String Selection- O(1)
+date: 2014-03-04 23:48:18.000000000 -08:00
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  blogger_blog: www.hakimhanif.com
+  blogger_author: Hakim Hanif
+  blogger_internal: "/feeds/2751951855380724535/posts/default/7618195031558102430"
+author:
+  login: hakimhanif
+  email: hakim.hanif@gmail.com
+  display_name: hakimhanif
+  first_name: ''
+  last_name: ''
+---
+<p><span style="font-family: arial, sans-serif; font-size: 13px;"></span>
+<div>Selecting a string randomly from a file: (using O(1) space and reading file only once)</div>
+<div></div>
+<div>Open the file and save the first string. At this point you have&nbsp;one candidate string with a 100% probability of picking it. While remembering the first string, read the next string. You now have two candidates, each with a 50% probability. Pick one of them,&nbsp;save it, and discard the other. Read the next string, and choose between that and the saved string,&nbsp;weighting your choice 33% toward the new string and 67% toward the survivor (which represents the&nbsp;winner of the previous two-way selection). Save the new survivor.</div>
+<div></div>
+<div>Keep on doing this throughout the entire file, at each step reading string N, and choosing between that&nbsp;(with probability 1/N) and the previous survivor, with probability (N - 1)/N.&nbsp;</div>
+<div></div>
+<div>When you reach the end&nbsp;of the file, the current survivor is the string picked at random!</div>

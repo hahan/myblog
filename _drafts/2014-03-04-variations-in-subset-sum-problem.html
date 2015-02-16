@@ -1,0 +1,26 @@
+---
+layout: post
+title: Variations in Subset sum problem
+date: 2014-03-04 23:48:18.000000000 -08:00
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  blogger_blog: www.hakimhanif.com
+  blogger_author: Hakim Hanif
+  blogger_internal: "/feeds/2751951855380724535/posts/default/6477544396114171829"
+author:
+  login: hakimhanif
+  email: hakim.hanif@gmail.com
+  display_name: hakimhanif
+  first_name: ''
+  last_name: ''
+---
+<div dir="ltr" style="text-align: left;"><span style="font-family: arial, sans-serif; font-size: 13px;"></span><br />There are various ways in which subset sum problem is asked in interviews. Here are some of them -</p>
+<p><b>Finding a subset of numbers whose sum is exactly equal to a given number</b>:<br />&nbsp;O(n^2) – similar to Knapsack problem</p>
+<p><b>Maximum Value contiguous subsequence sum</b>:<br />&nbsp;O(n) using dynamic programming</p>
+<p><b>Finding a pair of number whose sum is equal to a given number</b>: O(n log n)<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;a)<span style="font: normal normal normal 7pt/normal 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>sort the numbers and then perform binary search to find other number (sum – first number) in the array<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a.2) Instead of performing binary search on sorted numbers, we can start from the begin index and end index, &nbsp;and keep on checking whether sum of numbers at the index is &lt;, &gt; or =. If its = , then done else if its &lt; then forward begin_index to right else move end_index to left. &nbsp; </p>
+<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;b)<span style="font: normal normal normal 7pt/normal 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b>O(n)</b>&nbsp;using a hashmap, add all the numbers to the map and check if (sum – first number) is in the map</p>
+<p>I am not providing implementations for first two, but in case someone needs it, post your comment below and I will add it here.</p></div>
