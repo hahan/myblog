@@ -10,6 +10,8 @@ type: post
 published: true
 
 ---
+![My Evernote stacks](http://ecx.images-amazon.com/images/I/51Ml%2BjD9l3L.jpg)
+
 I just finished my first book of the year 2015: [The Power of Habit](http://www.amazon.com/The-Power-Habit-What-Business/dp/081298160X) by __Charles Duhigg__. It's an amazing book if you are looking to learn
 
 * How to change or create new habits?
